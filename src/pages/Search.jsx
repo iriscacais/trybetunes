@@ -12,6 +12,7 @@ class Search extends React.Component {
       loading: false,
       disabledSearchButton: true,
       albuns: [],
+      artista: '',
     };
   }
 
@@ -20,6 +21,7 @@ class Search extends React.Component {
     this.setState({
       input: target.value,
       disabledSearchButton: target.value.length < minValue,
+      artista: target.value,
     });
   };
 
@@ -33,11 +35,12 @@ class Search extends React.Component {
     this.setState({
       loading: false,
       albuns,
+      input: '',
     });
   };
 
   render() {
-    const { albuns, disabledSearchButton, input, loading } = this.state;
+    const { albuns, disabledSearchButton, input, loading, artista } = this.state;
     return (
       <>
         <div>
@@ -66,11 +69,9 @@ class Search extends React.Component {
           }
           {
             albuns.length > 0 && (
-              <p>
-                Resultado de álbuns de:
-                {' '}
-                {input}
-              </p>
+              <div>
+                {`Resultado de álbuns de: ${artista}`}
+              </div>
             )
           }
           {
@@ -86,7 +87,9 @@ class Search extends React.Component {
                       <Link
                         to={ `/album/${album.collectionId}` }
                         data-testid={ `link-to-album-${album.collectionId}` }
-                      />
+                      >
+                        Ir para o álbum
+                      </Link>
                     </li>
                   )))
                 }
