@@ -3,6 +3,8 @@ import React from 'react';
 import Header from '../components/Header';
 import getMusics from '../services/musicsAPI';
 import MusicCard from './MusicCard';
+// import { addSong } from '../services/favoriteSongsAPI';
+// import Loading from './Loading';
 
 class Album extends React.Component {
   constructor() {
