@@ -39,11 +39,13 @@ class Login extends React.Component {
   render() {
     const { name, disabledButton, loading, redirectSearch } = this.state;
     return (
-      <div data-testid="page-login">
+      <div data-testid="page-login" className="formLogin">
         <form>
-          <label htmlFor="nome">
+          <label htmlFor="nome" className="form-control">
             Nome
             <input
+              id="floatingInputValue"
+              className="input-group mb-3"
               type="text"
               name="nome"
               data-testid="login-name-input"
@@ -51,6 +53,7 @@ class Login extends React.Component {
               onChange={ this.onInputChange }
             />
             <button
+              className="btn btn-outline-secondary"
               onClick={ this.onEnterButtonClick }
               type="button"
               data-testid="login-submit-button"

@@ -7,7 +7,7 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <p>TrybeTunes</p>
+        <p className="Title">TrybeTunes</p>
         <BrowserRouter>
           <Sidebar />
         </BrowserRouter>
