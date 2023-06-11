@@ -3,6 +3,8 @@ import React from 'react';
 import Header from '../components/Header';
 import getMusics from '../services/musicsAPI';
 import MusicCard from './MusicCard';
+import './Album.css';
+
 // import { addSong } from '../services/favoriteSongsAPI';
 // import Loading from './Loading';
 
@@ -35,20 +37,20 @@ class Album extends React.Component {
           <Header />
           <div data-testid="page-album" />
         </div>
-        <section>
+        <section className="album">
           <h1 data-testid="artist-name">
             { musicasAlbum.artistName }
           </h1>
-
+          -
           <h1 data-testid="album-name">
             { musicasAlbum.collectionName }
           </h1>
         </section>
-        <ul>
+        <ul className="listMusics">
           {
             musicas
               ? musicas.map((musica) => (
-                <li key={ musica.trackId }>
+                <li key={ musica.trackId } className="eachMusic">
                   <MusicCard
                     { ... musica }
                   />

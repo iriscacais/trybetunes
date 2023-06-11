@@ -1,0 +1,24 @@
+h1 {
+    font-size: 22px;
+}
+
+.album {
+    display: flex;
+    font-family: monospace;
+    justify-content: center;
+    margin-top: 2%;
+}
+
+.listMusics {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+
+.eachMusic {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3%;
+    margin-left: 20%;
+    margin-right: 20%;
+}

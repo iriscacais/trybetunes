@@ -1,0 +1,53 @@
+.searchForm {
+    display: flex;
+    justify-content: start;
+    margin-top: 5%;
+    margin-left: 14%;
+}
+
+.text {
+    display: flex;
+    font-family: monospace;
+    justify-content: center;
+    margin-top: 3%;
+}
+
+.listAlbuns {
+    display: flex;
+    font-family: monospace;
+    justify-content: center;
+    margin-top: 3%;
+}
+
+.theAlbuns {
+    display: flex;
+    flex-direction: column;
+    font-family: monospace;
+    list-style: none;
+    margin-top: 2%;
+}
+
+.buttonForTheAlbum {
+    border: 1px solid black;
+    border-radius: 10px;
+    color: rgb(234, 114, 29);
+    height: 30px;
+    margin-left: 3%;
+    padding-left: 1%;
+    padding-right: 1%;
+    text-decoration: none;
+    width: 70px;
+}
+.buttonForTheAlbum:hover {
+    color: rgb(54, 165, 54);
+    
+}
+
+.eachAlbum {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 35%;
+    margin-top: 15px;
+    text-align: justify;
+    width: 36%;
+}

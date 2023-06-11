@@ -1,9 +1,13 @@
 import React from 'react';
+import './Login.css';
+import './Loading.css';
 
 class Loading extends React.Component {
   render() {
     return (
-      <p>Carregando...</p>
+      <div className="divCarregando">
+        <p className="carregando">Carregando...</p>
+      </div>
     );
   }
 }

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
 import Loading from './Loading';
+import './Search.css';
 
 class Search extends React.Component {
   constructor() {
@@ -48,7 +49,7 @@ class Search extends React.Component {
           <div data-testid="page-search" />
         </div>
         <div>
-          <form>
+          <form className="searchForm">
             <input
               type="text"
               data-testid="search-artist-input"
@@ -69,26 +70,27 @@ class Search extends React.Component {
           }
           {
             albuns.length > 0 && (
-              <div>
+              <div className="listAlbuns">
                 {`Resultado de álbuns de: ${artista}`}
               </div>
             )
           }
           {
-            albuns.length === 0 && <p> Nenhum álbum foi encontrado</p>
+            albuns.length === 0 && <p className="text"> Nenhum álbum foi encontrado</p>
           }
           {
             albuns.length > 0 && (
-              <ul>
+              <ul className="theAlbuns">
                 {
                   albuns.map(((album) => (
-                    <li key={ album.collectionId }>
+                    <li key={ album.collectionId } className="eachAlbum">
                       {album.collectionName}
                       <Link
                         to={ `/album/${album.collectionId}` }
                         data-testid={ `link-to-album-${album.collectionId}` }
+                        className="buttonForTheAlbum"
                       >
-                        Ir para o álbum
+                        álbum
                       </Link>
                     </li>
                   )))

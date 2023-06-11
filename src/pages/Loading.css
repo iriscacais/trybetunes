@@ -1,0 +1,12 @@
+.divCarregando {
+    display: flex;
+    font-size: 20px;
+    justify-content: center;
+    margin-top: 10%;
+}
+
+.carregando {
+    color: rgb(54, 165, 54);
+    font-size: monospace;
+
+}

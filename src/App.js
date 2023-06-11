@@ -6,12 +6,9 @@ import Sidebar from './components/Sidebar';
 class App extends React.Component {
   render() {
     return (
-      <>
-        <p className="Title">TrybeTunes</p>
-        <BrowserRouter>
-          <Sidebar />
-        </BrowserRouter>
-      </>
+      <BrowserRouter>
+        <Sidebar />
+      </BrowserRouter>
     );
   }
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import { createUser } from '../services/userAPI';
 import Loading from './Loading';
+import './Login.css';
 
 class Login extends React.Component {
   constructor() {
@@ -39,37 +40,40 @@ class Login extends React.Component {
   render() {
     const { name, disabledButton, loading, redirectSearch } = this.state;
     return (
-      <div data-testid="page-login" className="formLogin">
-        <form>
-          <label htmlFor="nome" className="form-control">
-            Nome
-            <input
-              id="floatingInputValue"
-              className="input-group mb-3"
-              type="text"
-              name="nome"
-              data-testid="login-name-input"
-              value={ name }
-              onChange={ this.onInputChange }
-            />
-            <button
-              className="btn btn-outline-secondary"
-              onClick={ this.onEnterButtonClick }
-              type="button"
-              data-testid="login-submit-button"
-              disabled={ disabledButton }
-            >
-              Entrar
-            </button>
-          </label>
-        </form>
-        {
-          loading ? <Loading /> : null // se loading for verdadeiro renderiza o componente Loading. Se nao permanece na página de login em que já estamos.
-        }
-        {
-          redirectSearch ? <Redirect to="/search" /> : null // se redirectSearch for true redirecionamos para a página search, se nao permanecemos na página de login em que já estamos.
-        }
-      </div>
+      <section>
+        <p className="Title">TrybeTunes</p>
+        <div data-testid="page-login" className="formLogin">
+          <form>
+            <label htmlFor="nome" className="form-control">
+              Nome
+              <input
+                id="floatingInputValue"
+                className="input-group mb-3"
+                type="text"
+                name="nome"
+                data-testid="login-name-input"
+                value={ name }
+                onChange={ this.onInputChange }
+              />
+              <button
+                className="btn btn-outline-secondary"
+                onClick={ this.onEnterButtonClick }
+                type="button"
+                data-testid="login-submit-button"
+                disabled={ disabledButton }
+              >
+                Entrar
+              </button>
+            </label>
+          </form>
+          {
+            loading ? <Loading /> : null // se loading for verdadeiro renderiza o componente Loading. Se nao permanece na página de login em que já estamos.
+          }
+          {
+            redirectSearch ? <Redirect to="/search" /> : null // se redirectSearch for true redirecionamos para a página search, se nao permanecemos na página de login em que já estamos.
+          }
+        </div>
+      </section>
     );
   }
 }

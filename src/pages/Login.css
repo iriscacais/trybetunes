@@ -1,0 +1,10 @@
+body {
+    background-image: url("../background.jpg");
+    background-position: center;
+  }
+  
+.formLogin {
+    display: flex;
+    justify-content: center;
+}
+

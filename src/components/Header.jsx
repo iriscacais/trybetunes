@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { getUser } from '../services/userAPI';
 import Loading from '../pages/Loading';
+import './Header.css';
 
 class Header extends React.Component {
   constructor() {
@@ -29,13 +30,26 @@ class Header extends React.Component {
     const { name, loading } = this.state;
     if (loading) return <Loading />; // se o estado loading for true retorna o componete Loading. Se nao retorna o codigo abaixo!
     return (
-      <header data-testid="header-component">
-        <h3 data-testid="header-user-name">
+      <header data-testid="header-component" className="mainHeader">
+        <h3 data-testid="header-user-name" className="userName">
+          Olá
+          {' '}
           {name}
+          !
+
         </h3>
-        <Link to="/search" data-testid="link-to-search">Procurar</Link>
-        <Link to="/favorites" data-testid="link-to-favorites">Favoritas</Link>
-        <Link to="/profile" data-testid="link-to-profile">Perfil</Link>
+        <div className="headerLinks">
+          <Link to="/search" data-testid="link-to-search" className="link">Procurar</Link>
+          <Link
+            to="/favorites"
+            data-testid="link-to-favorites"
+            className="link"
+          >
+            Favoritas
+
+          </Link>
+          <Link to="/profile" data-testid="link-to-profile" className="link">Perfil</Link>
+        </div>
       </header>
     );
   }
